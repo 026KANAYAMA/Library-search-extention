@@ -1,30 +1,34 @@
 <template>
   <div class="input-form">
     <h1>Amazon URL を貼り付け</h1>
-    <div><input type="text" v-model="url"></div><br>
-    <div v-if="existUrl"><button @click="searchUrl">検索</button></div>
+    <div><input type="text" v-model="urlFieldText"></div><br>
+    <div v-if="isbn != ''"><button @click="searchUrl">検索</button></div>
   </div>
 </template>
 
 <script>
+import {convertUrl2Isbn13} from "asin2isbn";
 export default {
   name: 'InputForm',
   data(){
     return {
-      url : '',
+      urlFieldText:'',
+      isbn : '',
     };
   },
   methods : {
     searchUrl() {
-      let url = this.url;
-      this.$store.commit("searchUrl",url);
+      console.log("この本のISBNは" + this.isbn);
     },
   },
-  computed: {
-    existUrl: function() {
-      return true;
-    },
-  },
+  watch:{
+    urlFieldText: function(newVal) {
+      let url = newVal;
+      let res = convertUrl2Isbn13(url);
+      this.isbn= res.error != "" ?  "" :  res.isbn;
+
+    }
+  }
 };
 </script>
 
