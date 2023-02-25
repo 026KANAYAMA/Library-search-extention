@@ -19,6 +19,7 @@ export default {
   methods : {
     searchUrl() {
       console.log("この本のISBNは" + this.isbn);
+      window.open("https://sistlb.sist.ac.jp/opac/search?isbn=" + this.isbn);
     },
   },
   watch:{
