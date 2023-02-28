@@ -1,12 +1,14 @@
 <template>
-  <div class="input-form">
+  <div class="bg-blue-200 p-4">
     <div>
-      <h1>AmazonのURLを貼り付けてください</h1>
-      <p>※Kindle版は対応していません</p>
-      <p>※URLを入力すると検索ボタンが表示されます</p>
+      <h1 class="text-3xl text-gray-600 text-center">AmazonのURLを貼り付けてください</h1>
+      <div class="text-gray-600 text-center my-4">
+        <p>※Kindle版は対応していません</p>
+        <p>※URLを入力すると検索ボタンが表示されます</p>
+      </div>
     </div>
-    <div>
-      <input type="text" v-model="urlFieldText" ref="input">
+    <div class="text-center">
+      <input placeholder="URL" type="text" v-model="urlFieldText" ref="input" class="w-1/3 font-medium placeholder-gray-400 bg-gray-100 text-gray-600 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-2 py-1 ">
       <div v-if="kindle"><button @click="clearText">入力をクリア</button></div>
     </div><br>
     <div v-if="isbn != ''">
