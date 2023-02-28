@@ -4,7 +4,7 @@
 
 <script>
 import InputForm from './components/InputForm.vue'
-
+import './index.css'
 export default {
   name: 'App',
   components: {
