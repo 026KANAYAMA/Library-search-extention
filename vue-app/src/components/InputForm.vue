@@ -34,12 +34,7 @@ export default {
   },
   methods : {
     searchUrl() {
-      console.log("この本のISBNは" + this.isbn);
       window.open("https://sistlb.sist.ac.jp/opac/search?isbn=" + this.isbn);
-    },
-    isKindleUrl(url){
-      const pattern = /amazon/;
-      return pattern.test(url);
     },
     clearText(){
       this.urlFieldText = '';
@@ -51,9 +46,8 @@ export default {
       let url = newVal;
       let res = convertUrl2Isbn13(url);
       this.isbn= res.error != "" ?  "" :  res.isbn;
-      if(this.isbn == ""){
-        this.kindle = this.isKindleUrl(url);
-      }
+      this.kindle = res.error == "KINDLE";
+      
     }
   },
   created: function() {
