@@ -1,26 +1,30 @@
 <template>
-  <div class="bg-blue-200 p-4">
+  <div class="bg-blue-200 p-4 pb-28 pt-23">
     <div>
-      <h1 class="text-3xl text-gray-600 text-center">AmazonのURLを貼り付けてください</h1>
-      <div class="text-gray-600 text-center my-4">
-        <p>※Kindle版は対応していません</p>
+      <h1 class="font-sans text-4xl text-gray-600 text-center mt-28 mb-16 font-bold">AmazonのURLを貼り付けてください</h1>
+      <div class="text-gray-600 text-center my-2 ">
+        <p class="mb-2">※Kindle版は対応していません</p>
         <p>※URLを入力すると検索ボタンが表示されます</p>
       </div>
     </div>
     <div class="text-center">
-      <input placeholder="URL" type="text" v-model="urlFieldText" ref="input" class="w-1/3 font-medium placeholder-gray-400 bg-gray-100 text-gray-600 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-2 py-1 ">
-      <div v-if="kindle"><button @click="clearText">入力をクリア</button></div>
+      <input placeholder="URL" type="text" v-model="urlFieldText" ref="input" class=" mt-10 w-1/3 font-medium placeholder-gray-400 bg-gray-100 text-gray-600 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-2 py-1 ">
+      <div v-if="kindle"><button @click="clearText" class="mt-2 bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-indigo-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">入力をクリア</button></div>
     </div><br>
-    <div v-if="isbn != ''">
-      <button @click="searchUrl">検索</button>
+    <div v-if="isbn != '' ">
+      <button @click="searchUrl" class=" bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-indigo-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">検索</button>
     </div>
-    <div v-if="kindle">
-      <h2>エラー</h2>
-      <p>※入力されたURLはKindle版の可能性があります</p>
-      <p>※紙版のURLを入力してください</p>
-      <img src="https://i.gyazo.com/c13353fcbacce087b7dd3a42985d19c0.png" alt="補足画像">
+    <div v-if="kindle" class="text-gray-600 text-center">
+      <hr class="border-t-2 border-red-500">
+      <h2 class="text-3xl text-red-400 font-bold mt-4">エラー</h2>
+      <div class="pt-2">
+        <p class="pb-2">※入力されたURLはKindle版の可能性があります</p>
+        <p class="mb-3">※紙版のURLを入力してください</p>
+      </div>
+      <img src="https://i.gyazo.com/c13353fcbacce087b7dd3a42985d19c0.png" alt="補足画像" class="mx-auto">
     </div>
   </div>
+
 </template>
 
 <script>
