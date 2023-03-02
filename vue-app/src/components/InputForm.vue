@@ -1,14 +1,10 @@
 <template>
-  <div class="bg-blue-200 p-4 pb-10 pt-23">
-    <div>
+  <div>
+    <h1 class="text-2xl text-gray-600">SIST 図書館検索拡張機能</h1>
+    <div class="bg-blue-200 p-4 pb-10 pt-23">
       <p class=" p-2 mt-12 mb-14 font-sans text-2xl text-gray-500 text-center font-bold">Amazonで本を購入する前に<br>大学の図書館にその本があるかどうかを確認できます</p>
-      <div class="text-gray-500 text-center mb-2 mt-2 ">
-        <p class="mb-1">※Kindle版は対応していません</p>
-        <p>※URLを入力すると検索ボタンが表示されます</p>
-      </div>
-    </div>
     <div class="text-center">
-      <input placeholder="確認したい本のAmazon URLをここに貼り付けてください" type="text" v-model="urlFieldText" ref="input" class="  w-1/3 font-medium placeholder-gray-400 bg-gray-100 text-gray-600 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-4 py-1 ">
+      <input placeholder="確認したい本のAmazon URLをここに貼り付けてください" type="text" v-model="urlFieldText" ref="input" class="w-full font-medium placeholder-gray-400 bg-gray-100 text-gray-600 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-4 py-1" style="max-width: 1000px;">
       <div v-if="kindle"><button @click="clearText" class="mt-2 bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-indigo-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">入力をクリア</button></div>
     </div><br>
     <div v-if="isbn != '' ">
@@ -22,6 +18,7 @@
         <p class="mb-3">※紙版のURLを入力してください</p>
       </div>
       <img src="https://i.gyazo.com/c13353fcbacce087b7dd3a42985d19c0.png" alt="補足画像" class="mx-auto">
+    </div>
     </div>
   </div>
 </template>
