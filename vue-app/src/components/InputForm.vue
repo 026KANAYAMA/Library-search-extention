@@ -1,14 +1,14 @@
 <template>
-  <div class="bg-blue-200 p-4 pb-28 pt-23">
+  <div class="bg-blue-200 p-4 pb-10 pt-23">
     <div>
-      <h1 class="font-sans text-4xl text-gray-600 text-center mt-28 mb-16 font-bold">AmazonのURLを貼り付けてください</h1>
-      <div class="text-gray-600 text-center my-2 ">
-        <p class="mb-2">※Kindle版は対応していません</p>
+      <p class=" p-2 mt-12 mb-14 font-sans text-2xl text-gray-500 text-center font-bold">Amazonで本を購入する前に<br>大学の図書館にその本があるかどうかを確認できます</p>
+      <div class="text-gray-500 text-center mb-2 mt-2 ">
+        <p class="mb-1">※Kindle版は対応していません</p>
         <p>※URLを入力すると検索ボタンが表示されます</p>
       </div>
     </div>
     <div class="text-center">
-      <input placeholder="URL" type="text" v-model="urlFieldText" ref="input" class=" mt-10 w-1/3 font-medium placeholder-gray-400 bg-gray-100 text-gray-600 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-2 py-1 ">
+      <input placeholder="確認したい本のAmazon URLをここに貼り付けてください" type="text" v-model="urlFieldText" ref="input" class="  w-1/3 font-medium placeholder-gray-400 bg-gray-100 text-gray-600 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-4 py-1 ">
       <div v-if="kindle"><button @click="clearText" class="mt-2 bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-indigo-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">入力をクリア</button></div>
     </div><br>
     <div v-if="isbn != '' ">
@@ -24,7 +24,6 @@
       <img src="https://i.gyazo.com/c13353fcbacce087b7dd3a42985d19c0.png" alt="補足画像" class="mx-auto">
     </div>
   </div>
-
 </template>
 
 <script>
@@ -79,4 +78,3 @@ export default {
   %BF%92%E3%81%AB%E3%82%88%E3%82%8B%E8%87%AA%E7%84%B6%E8%A8%80%E8%AA%9E%E5%87%A6%E7%90%86%E5%85%A5%E9%96%
   80-Compass-Books%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA-%E4%B8%AD%E5%B1%B1-%E5%85%89%E6%A8%B9-ebook/dp/B08
   4WPRT44/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=1677060374&sr=8-1  -->
-
