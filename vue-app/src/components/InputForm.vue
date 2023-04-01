@@ -20,6 +20,9 @@
       <img src="https://i.gyazo.com/c13353fcbacce087b7dd3a42985d19c0.png" alt="補足画像" class="mx-auto">
     </div>
     </div>
+    <footer>
+      <a href="https://github.com/026KANAYAMA/Library-search-extention" target="_blank"><p class="text-right mr-10 mt-5 text-gray-500 underline">リポジトリ</p></a>
+    </footer>
   </div>
 </template>
 
